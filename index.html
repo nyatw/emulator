@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        width: 100%;
+        min-height: 100%;
+        margin: 0;
+    }
+
+    .container {
+        width: 100vw;
+        height: 100vh;
+        padding: 24px;
+        background-color: #ededed;
+        position: relative;
+    }
+
+    .content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        background-color: #fff;
+        box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.2);
+        border-radius: 6px;
+        padding: 24px;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        width: 144px;
+        height: 144px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .navigation div {
+        display: flex;
+    }
+    .navigation button {
+        width: 60px;
+        height: 50px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 2;
+        border-radius: 50%;
+        transition: all .3s ease-in-out;
+    }
+    .navigation button:hover {
+        filter: blur(4px);
+        background-color: rgba(237, 237, 237, 0.5);
+    }
+    .navigation button:focus, .navigation button:focus-within, .navigation button:active, .navigation button:visited {
+        border: none;
+        outline: none;
+    }
+    .pult {
+        width: 200px;
+        height: 750px;
+        position: absolute;
+        background-image: url(src/images/JPEG/Pult_likebox.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 1;
+        filter: drop-shadow(2px 4px 6px #666);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .emulation {
+        width: 1280px;
+        height: 720px;
+        background-color: antiquewhite;
+        border: 36px solid #313131;
+        box-sizing: content-box;
+        box-shadow: 0px 2px 12px 6px rgba(0, 0, 0, 0.2);
+        border-radius: 6px ;
+    }
+</style>
+<body>
+<div class="container">
+    <div class="content">
+        <div class="navigation">
+            <div class="pult">
+                <div style="margin-top: 175px">
+                    <button title="Up" onclick="buttonDownUp(-1)"></button>
+                </div>
+                <div>
+                    <button title="Left" onclick="buttonLeft(-1)"></button>
+                    <button title="OK" onclick="buttonOk()"></button>
+                    <button title="Right" onclick="buttonRight(1)"></button>
+                </div>
+                <div>
+                    <button title="Down" onclick="buttonDownUp(1)"></button>
+                </div>
+                <div style="margin-top: -5px; align-self: start;">
+                    <button title="Back" onclick="buttonBack()"></button>
+                    <!--<button onclick="tvgid()">tvgid</button>-->
+                    <button onclick="check()">check</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="emulation">
+            <img id="1" width="100%" height="100%" src="../src/images/JPEG/menu/05_main/_start%2001.jpg">
+        </div>
+    </div>
+</div>
+</body>
+<script src="../src/js/main.js"></script>
+</html>
